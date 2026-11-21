@@ -1,0 +1,26 @@
+{
+  "sourceLanguage" : "fr",
+  "strings" : {
+    "home.title" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Car Miror"
+          }
+        }
+      }
+    },
+    "home.toolchainOk" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Si tu vois cet écran sur ton iPhone, toute la chaîne fonctionne : compilation sur GitHub, puis installation depuis Windows."
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

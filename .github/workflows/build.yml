@@ -1,0 +1,57 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install XcodeGen
+        run: brew install xcodegen
+
+      - name: Generate the Xcode project
+        run: xcodegen generate
+
+      - name: Run unit tests on a simulator
+        run: |
+          UDID=$(xcrun simctl list devices available -j | python3 -c "
+          import json, sys
+          devices = json.load(sys.stdin)['devices']
+          print(next(d['udid'] for runtime, items in sorted(devices.items(), reverse=True)
+                     if 'iOS' in runtime for d in items if d['name'].startswith('iPhone')))
+          ")
+          xcodebuild test \
+            -project CarMiror.xcodeproj \
+            -scheme CarMiror \
+            -destination "id=$UDID" \
+            CODE_SIGNING_ALLOWED=NO
+
+      # Unsigned on purpose: Sideloadly signs it on Windows with the author's Apple ID.
+      - name: Build unsigned IPA
+        run: |
+          xcodebuild build \
+            -project CarMiror.xcodeproj \
+            -scheme CarMiror \
+            -configuration Release \
+            -sdk iphoneos \
+            -derivedDataPath build \
+            CURRENT_PROJECT_VERSION=${{ github.run_number }} \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY=""
+          mkdir -p Payload
+          cp -R build/Build/Products/Release-iphoneos/CarMiror.app Payload/
+          zip -qry CarMiror.ipa Payload
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: CarMiror-ipa
+          path: CarMiror.ipa
+          retention-days: 14
