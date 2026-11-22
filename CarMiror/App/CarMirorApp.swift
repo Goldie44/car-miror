@@ -4,7 +4,7 @@ import SwiftUI
 struct CarMirorApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            LauncherView()
         }
     }
 }

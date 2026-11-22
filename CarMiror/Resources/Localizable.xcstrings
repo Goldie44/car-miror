@@ -1,22 +1,62 @@
 {
   "sourceLanguage" : "fr",
   "strings" : {
-    "home.title" : {
+    "launcher.title" : {
       "localizations" : {
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Car Miror"
+            "value" : "Mode voiture"
           }
         }
       }
     },
-    "home.toolchainOk" : {
+    "launcher.category.video" : {
       "localizations" : {
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Si tu vois cet écran sur ton iPhone, toute la chaîne fonctionne : compilation sur GitHub, puis installation depuis Windows."
+            "value" : "Vidéo"
+          }
+        }
+      }
+    },
+    "launcher.category.music" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Musique"
+          }
+        }
+      }
+    },
+    "launcher.category.navigation" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Navigation"
+          }
+        }
+      }
+    },
+    "launcher.empty.title" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucune app compatible"
+          }
+        }
+      }
+    },
+    "launcher.empty.description" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Installe Netflix, YouTube, Spotify, Waze ou une autre app prise en charge, puis reviens ici."
           }
         }
       }

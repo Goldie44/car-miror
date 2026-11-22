@@ -16,7 +16,7 @@ One-time setup, then a short routine for every new build.
 3. **Apple tools for Windows.** Install iTunes and iCloud from apple.com, **not** the Microsoft Store versions (Sideloadly cannot see the phone with those).
 4. **Sideloadly.** Install it from sideloadly.io.
 5. **Apple ID.** Sideloadly signs the app with an Apple ID. A free one works. A secondary Apple ID is safer than your main one, since you type it into a third-party tool.
-6. **iPhone.** Settings → Privacy & Security → **Developer Mode** → on (the phone restarts).
+6. **iPhone.** Réglages → Confidentialité et sécurité → **Mode développeur** → on (the phone restarts).
 
 ## Every new build
 
@@ -25,7 +25,7 @@ One-time setup, then a short routine for every new build.
 3. Open the run, download the **CarMiror-ipa** artifact, unzip it to get `CarMiror.ipa`.
 4. Plug the iPhone in with a cable, unlock it, accept "Trust this computer".
 5. In Sideloadly: drag `CarMiror.ipa` in, type the Apple ID, click **Start**.
-6. First time only, on the iPhone: Settings → General → VPN & Device Management → your Apple ID → **Trust**.
-7. Open Car Miror. The version at the bottom (`v0.1.0 (N)`) shows the build number N of the GitHub run.
+6. First time only, if the iPhone says "Développeur non approuvé" (Untrusted Developer): Réglages → Général → VPN et gestion de l'appareil → your Apple ID → **Faire confiance**.
+7. Open Car Miror. The version at the bottom (`v0.2.0 (N)`) shows the build number N of the GitHub run.
 
 With a free Apple ID, the app stops opening after 7 days: install it again with Sideloadly.

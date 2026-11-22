@@ -49,6 +49,58 @@ _Example:_ without it, Car Miror refuses to open after Sideloadly installs it.
 The file that holds every user-facing text, by key and by language. The iOS equivalent of the i18next translation files in Ravitail.
 _Example:_ `Text("home.title")` shows "Car Miror", read from the catalog.
 
+### URL scheme
+
+A web-like address that opens an app instead of a website, made of the app's prefix followed by `://`.
+_Example:_ the Netflix tile opens `nflx://`, which launches Netflix.
+
+### LSApplicationQueriesSchemes
+
+The list, in `Info.plist`, of URL schemes the app is allowed to ask about ("is this app installed?"). iOS answers "no" for any scheme missing from the list.
+_Example:_ `waze` is in the list, so the launcher can show the Waze tile only when Waze is installed.
+
+### Info.plist
+
+The app's identity card: name, version, permissions, supported orientations… Most keys are generated from `project.yml`; ours only adds the URL scheme list.
+_Example:_ `CarMiror/Resources/Info.plist`.
+
+### Idle timer
+
+The iOS timer that locks the screen after a while without touching it. An app can turn it off while it is open.
+_Example:_ the launcher sets `isIdleTimerDisabled` so the phone in its car mount never goes black.
+
+### SF Symbols
+
+Apple's built-in icon set, usable in any app by name. The iOS equivalent of lucide-react in Ravitail.
+_Example:_ `play.rectangle.fill` on video tiles, `map.fill` on navigation tiles.
+
+## SwiftUI building blocks
+
+### View model (@Observable)
+
+A class that holds a screen's data and logic, apart from its layout. Marked `@Observable`, it makes the view redraw when its data changes. The role TanStack Query hooks plus Zustand play in Ravitail.
+_Example:_ `LauncherViewModel` decides which tiles to show; `LauncherView` only draws them.
+
+### Protocol (and fake)
+
+A Swift contract listing what a type must be able to do, without saying how. Tests then pass a fake that follows the same contract.
+_Example:_ `AppAvailabilityChecking`; the real one asks iOS, the test one says "only Waze and Netflix are installed".
+
+### LazyVGrid
+
+A grid that fills columns with as many items as fit the screen width, and only builds the visible ones. With `.adaptive(minimum:)` it shows 2 columns in portrait and more in landscape.
+_Example:_ the tiles of each category.
+
+### ContentUnavailableView
+
+Apple's standard empty-state screen: an icon, a title and a description. The "empty" state of the four data states in Ravitail.
+_Example:_ "Aucune app compatible" when none of the supported apps is installed.
+
+### Scene phase
+
+Whether the app is active on screen, inactive or in the background. Views can react when it changes.
+_Example:_ coming back to Car Miror refreshes the tiles, in case an app was installed meanwhile.
+
 ## Tooling
 
 ### Xcode
