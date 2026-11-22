@@ -29,3 +29,7 @@ One-time setup, then a short routine for every new build.
 7. Open Car Miror. The version at the bottom (`v0.2.0 (N)`) shows the build number N of the GitHub run.
 
 With a free Apple ID, the app stops opening after 7 days: install it again with Sideloadly.
+
+## Troubleshooting
+
+**"Impossible d'approuver les apps…" when tapping Faire confiance.** The iPhone checks the certificate online with Apple and that check failed. Try in order: leave Réglages completely and come back, then tap again (this fixed it on 2026-11-22); turn off any VPN or DNS/ad blocker; check Réglages → Général → Date et heure → Réglage automatique; delete the app and reinstall it with Sideloadly using the same Apple ID.

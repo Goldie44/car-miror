@@ -30,5 +30,5 @@ The original idea (mirror streaming apps to CarPlay) is not feasible: Apple forb
 ## Slices
 
 0. Toolchain: a minimal screen built on CI and installed on the iPhone. _(validated 2026-11-22)_
-1. Launcher: big tiles by category (Vidéo, Musique, Navigation) for installed apps; screen stays awake. _(in progress)_
-2. Driving detection: hide video tiles while the car moves (Core Motion).
+1. Launcher: big tiles by category (Vidéo, Musique, Navigation) for installed apps; screen stays awake. _(validated 2026-11-22)_
+2. Driving detection: the video section is replaced by "Vidéo masquée pendant la conduite" while the car moves (Core Motion). A stop counts as parked after 2 minutes (no flicker at red lights); walking away unlocks at once. If motion access is denied, video stays available with a warning banner and a link to Réglages. _(in progress)_

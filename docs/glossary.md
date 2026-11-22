@@ -69,6 +69,21 @@ _Example:_ `CarMiror/Resources/Info.plist`.
 The iOS timer that locks the screen after a while without touching it. An app can turn it off while it is open.
 _Example:_ the launcher sets `isIdleTimerDisabled` so the phone in its car mount never goes black.
 
+### Core Motion
+
+The iOS framework that reads the phone's motion sensors and guesses what you are doing: stationary, walking, running, cycling or in a vehicle ("automotive"), with a confidence level.
+_Example:_ `CoreMotionActivityProvider` listens to it to know when the car is moving.
+
+### Permission prompt (usage description)
+
+The system alert iOS shows the first time an app wants sensitive data (location, camera, motion…). The sentence in it comes from the app's Info.plist; without it the app crashes when asking.
+_Example:_ "Car Miror détecte quand tu roules pour masquer la vidéo pendant la conduite." for "Mouvements et forme".
+
+### Hysteresis
+
+Waiting for a signal to last a while before switching state, so the state does not flicker back and forth.
+_Example:_ the video only comes back after 2 minutes stopped, so it does not reappear at every red light.
+
 ### SF Symbols
 
 Apple's built-in icon set, usable in any app by name. The iOS equivalent of lucide-react in Ravitail.

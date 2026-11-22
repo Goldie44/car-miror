@@ -7,7 +7,7 @@ Native iPhone app (Swift + SwiftUI) for the author's personal use in the car. Bu
 - The author is a beginner. Talk to them in **French**. Explain every concept you introduce (short, concrete, with an example from Car Miror). Add every new term to `docs/glossary.md`.
 - Point out problems, contradictions and bad ideas immediately, with the reason and an alternative.
 - When asking a question, give your recommended answer and why, so "ok" is a valid reply.
-- **Language split:** code, comments, docs and commit messages in English. User-facing text in French, in `Localizable.xcstrings` only.
+- **Language split:** code, comments, docs and commit messages in English. User-facing text in French, in `Localizable.xcstrings` only (exception: permission prompt texts such as `NSMotionUsageDescription` live in `project.yml`, since iOS reads them from Info.plist).
 - **Vertical slices:** build one slice, check it yourself (CI green: tests + IPA build), then hand it to the author to install on their iPhone. Do not start the next slice before they validate.
 - Do not commit unless asked. Commits: gitmoji + short imperative English message (`✨ add the home screen`).
 

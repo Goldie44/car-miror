@@ -11,7 +11,7 @@ options:
 settings:
   base:
     SWIFT_VERSION: "5.0"
-    MARKETING_VERSION: "0.2.0"
+    MARKETING_VERSION: "0.3.0"
     CURRENT_PROJECT_VERSION: "1"
 
 targets:
@@ -28,6 +28,8 @@ targets:
         INFOPLIST_FILE: CarMiror/Resources/Info.plist
         INFOPLIST_KEY_CFBundleDisplayName: Car Miror
         INFOPLIST_KEY_UILaunchScreen_Generation: YES
+        # Permission prompt text: iOS reads it from Info.plist, so it lives here rather than in Localizable.xcstrings.
+        INFOPLIST_KEY_NSMotionUsageDescription: "Car Miror détecte quand tu roules pour masquer la vidéo pendant la conduite."
         INFOPLIST_KEY_UISupportedInterfaceOrientations: "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight"
         TARGETED_DEVICE_FAMILY: "1"
 

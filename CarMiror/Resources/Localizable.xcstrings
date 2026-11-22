@@ -60,6 +60,66 @@
           }
         }
       }
+    },
+    "launcher.drivingLock.title" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vidéo masquée pendant la conduite"
+          }
+        }
+      }
+    },
+    "launcher.drivingLock.description" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Elle revient après 2 minutes à l’arrêt."
+          }
+        }
+      }
+    },
+    "driving.access.title" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Détection de conduite désactivée"
+          }
+        }
+      }
+    },
+    "driving.access.denied" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Autorise « Mouvements et forme » pour que la vidéo se masque quand tu roules."
+          }
+        }
+      }
+    },
+    "driving.access.unavailable" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cet iPhone ne sait pas détecter la conduite : la vidéo n’est jamais masquée."
+          }
+        }
+      }
+    },
+    "driving.access.openSettings" : {
+      "localizations" : {
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ouvrir les réglages"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

@@ -4,6 +4,11 @@ enum LauncherCategory: String, CaseIterable {
     case video
     case music
     case navigation
+
+    /// Watching video while driving is illegal in France; music and navigation stay usable.
+    var isHiddenWhileDriving: Bool {
+        self == .video
+    }
 }
 
 /// An app Car Miror can open through its URL scheme.
